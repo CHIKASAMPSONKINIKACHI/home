@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home/screens/Splash_Screen.dart';
-import 'package:home/screens/Login_Screen.dart';
 
-void main() {
+void main() { 
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
@@ -17,7 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: const Color(0xffF9F9F9),
+        fontFamily: 'GothamMedium',
       ),
       home: const SplashScreen(),
     );

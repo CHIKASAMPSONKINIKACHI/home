@@ -1,17 +1,17 @@
 // ignore_for_file: prefer_const_constructors, avoid_print, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart'; 
-import 'package:home/widgets/login.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';  
+import 'package:home/widgets/sign_up.dart';
 
-class FullScreen extends StatefulWidget {
-  const FullScreen({Key? key}) : super(key: key);
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
-  State<FullScreen> createState() => _FullScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _FullScreenState extends State<FullScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -19,18 +19,18 @@ class _FullScreenState extends State<FullScreen> {
         body: SingleChildScrollView(
           child: Stack(children: [
             Positioned(
-              right: 0,
+              left: 0,
               top: -5,
               child: Image(
                 image: Svg(
-                  'assets/svgs/right_logo.svg',
+                  'assets/svgs/left_logo.svg',
                   size: Size(252, 350),
                 ),
               ),
             ),
             Container(
               margin: EdgeInsets.fromLTRB(40, 125, 40, 30), //top:133 bottom:55
-              child: Login(),
+              child: SignUp(),
             )
           ]),
         ),

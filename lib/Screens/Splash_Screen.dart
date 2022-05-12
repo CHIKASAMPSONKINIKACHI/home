@@ -1,10 +1,10 @@
-import 'dart:async';
-//import 'dart:js';
-//import 'dart:html';
-import 'package:flutter/material.dart';
-import 'package:home/screens/Login_Screen.dart';
+// ignore_for_file: file_names
 
-void main() {}
+import 'package:flutter/material.dart';
+
+import '../theme/colors.dart';
+import '../widgets/brand.dart';
+import 'login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -16,26 +16,25 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    var next = const Duration(seconds: 3);
+    Future.delayed(next, () {
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const FullScreen()),
+        (route) => false,
+      );
+    });
     super.initState();
-    _navigatetohome();
-  }
-
-  _navigatetohome() async {
-    await Future.delayed(Duration(milliseconds: 4000), () {});
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => LoginScreen(),
-      ),
-    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blue[900],
-      body: Center(
-        child: Image.asset('images/rphm.png'),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.blueColor,
+        body: Center(
+          child: Brand(AppColors.lightRedColor),
+        ),
       ),
     );
   }
